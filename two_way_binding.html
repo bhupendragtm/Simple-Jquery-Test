@@ -1,0 +1,62 @@
+<!-- The Concept -->
+<html><title>Two Way Binding!</title>
+<body>
+<div class="title text-center">Two way Data Binding</div>
+
+<!-- Two way bindin using JQuery -->
+<div class="jumbotron jq text-center">
+  <p class="lead">JQuery version</p>
+  
+  <p id="output" class="lead"></p>
+  <div class="form-group">
+    <input type="text" id="input" class="form-control" placeholder="enter text..."/>
+  </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<Script>
+    (function main($) {
+        'use strict';
+        
+        const $output = $('#output');
+        const $input = $('input');
+        
+        const updateOutput = function () {
+          $output.text($input.val());
+        }
+      
+        $input.on('keyup', updateOutput);
+      })(jQuery);
+</Script>
+<style>
+    * {
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .title {
+    background: #91AA9D;
+    color: #193441;
+    height: 30px;
+    padding-top: 5px;
+    font-size: 1em;
+    align-content: center;
+  }
+  
+  .jumbotron {
+    margin: 0;
+    height: calc(50vh - 15px);
+    padding: 50px 6% 0 6%;
+    overflow: scroll;
+  }
+  
+  .form-control {
+    color: #193441;
+    background-color: #FCFFF5;
+    border-radius: 2px;
+    height: 45px;
+    border: none;
+    padding-left: 35px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  </style>
+</body></html>

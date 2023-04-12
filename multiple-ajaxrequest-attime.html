@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery multiple AJAX requests</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type = "text/javascript" language = "javascript">
+   $(document).ready(function() {
+     $('.loader').click(function(){
+        $.when($.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", {
+                tags: "moon",
+                tagmode: "any",
+                format: "json"
+            }),
+            $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", {
+                tags: "bird",
+                tagmode: "any",
+                format: "json"
+            }),
+            $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", {
+                tags: "bird",
+                tagmode: "any",
+                format: "json"
+            })
+            ).then(function (picArray1, picArray2, picArray3) {
+                $.each(picArray1[0].items, function (i, item) {
+                    var img = $("<img/>");
+                    img.attr('width', '200px');
+                    img.attr('height', '150px');
+                    img.attr("src", item.media.m).appendTo("#myImages");
+                    if (i == 1) return false;
+                })
+                $.each(picArray2[0].items, function (i, item) {
+                    var img = $("<img/>");
+                    img.attr('width', '200px');
+                    img.attr('height', '150px');
+                    img.attr("src", item.media.m).appendTo("#myImages");
+                    if (i == 1) return false;
+                })
+                $.each(picArray3[0].items, function (i, item) {
+                    var img = $("<img/>");
+                    img.attr('width', '200px');
+                    img.attr('height', '150px');
+                    img.attr("src", item.media.m).appendTo("#myImages");
+                    if (i == 1) return false;
+                })
+            });
+     });
+   });
+</script>
+<style>
+img {
+    padding : 10px;
+}
+</style>
+</head>
+<body>
+<input type = "button" class = "loader" value = "Load Data" />
+<div id="myImages"></div>
+</body>
+</html>

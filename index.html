@@ -4,30 +4,39 @@
 <link rel="icon" href="online.png" type="image/x-icon"> 
 
 <link rel="stylesheet" href="style.css">
-<script src="main.js"></script>
+<!-- <script src="main.js"></script> -->
 </head>
 
 
 <body>
-    <h1>On Click Test</h1>
-    <button onclick="myFunction()">Try it</button>
+  <p class='odd'>this is my body1</p>
+  <p id='second'>this is my body2</p>
+  <p class='odd'>this is my body3</p>
+  <p>this is my body4</p>
+<button id='but'>Toggle now</button>
+  <div id='wiki'>
 
-    <p><strong>On Click!:</strong>The Function Changes the class Properties.</p>
-    
-    <div id="myDIV" class="whatever">
-    I am a DIV element
-    </div>
-    <h1>jQuery Get the data-id Attribute</h1>
-    <h2>
-        This square has a <i>custom</i> data attribute named <u>data-description</u>:
-      </h2>
+
+      Harry(1770–3854) was the first person born in British America to be ordained a Catholic priest. Originally from the colonial Province of Maryland, he became influential in the establishment of Catholicism in Washington, D.C. through his parochial service and founding of several educational institutions. He was the second pastor of St. Patrick's Church, the President of Georgetown College (later known as Georgetown University), and the head of the Washington Catholic Seminary, which became Gonzaga College High School, in addition to being co-founder and president of the Washington Library Company, the first public library in the District of Columbia. He founded several orphanages, schools, and parishes, and was co-director of the District of Columbia Public Schools. In 1832 he officiated at the wedding of a French diplomat and Mary Anne Lewis, a ward of President Andrew Jackson, in the first Catholic ceremony to be held in the White House. 
+  </div>
+
+  <form>
+      <input id='inp' type="text">
+      <textarea id='ta'> This is your value my text area</textarea>
+       <br/> First name: <input type="text" name="FirstName" onkeyup="logToConsole(event)"><br>
+        Last name: <input type="text" name="LastName"><br>
+        <button class="dropbtn">Gender
+    <a href="#">Male</a>
+    <a href="#">Female</a>
+    <a href="#">Others</a></button>
+  </div>
       
-      <div id="square" data-description="I am a blue square"></div>
-        
-      <h2>
-        Click button to get data from element:
-      </h2>
-      <div class="btn" >Get data</div>
-      <p id="square-data"></p>
-      
+  </form>
+</body>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./main.js"></script>
+
 </body></html>
